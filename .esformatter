@@ -1,6 +1,6 @@
 {
   "indent": {
-    "value": "    ",
+    "value": "  ",
     "ArrayExpression": 1,
     "AssignmentExpression": 1,
     "BinaryExpression": 1,
@@ -315,7 +315,7 @@
       "attrsOnSameLineAsTag": false,
        // how many attributes should the node have before having to put each
        // attribute in a new line. Default 1
-      "maxAttrsOnTag": 3,
+      "maxAttrsOnTag": 1,
       // if the attributes are going to be put each one on its own line, then keep the first
       // on the same line as the open tag
       "firstAttributeOnSameLine": true,
@@ -326,7 +326,7 @@
       "htmlOptions": { // same as the ones passed to js-beautifier.html
         "brace_style": "collapse",
         "indent_char": " ",
-        "indent_size": 4,
+        "indent_size": 2,
         "max_preserve_newlines": 2,
         "preserve_newlines": true
         //wrap_line_length: 250
