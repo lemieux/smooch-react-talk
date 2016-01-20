@@ -3,7 +3,7 @@ import styles from './styles';
 
 export class ContactForm extends Component {
   state = {
-    firstName: 'Anonymous'
+    firstName: 'Rick'
   };
 
   onChange = (e) => {
@@ -17,13 +17,13 @@ export class ContactForm extends Component {
       <form>
         <div>
           <label style={ styles.label }>
-            First name
+            Name
           </label>
           <input ref="firstName"
                  defaultValue={ this.state.firstName }
                  onChange={ this.onChange } />
           <p>
-            Your first name is { this.state.firstName }
+            Your name is { this.state.firstName }
           </p>
         </div>
       </form>

@@ -18,6 +18,7 @@ require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 
 import { ContactForm } from './contact-form';
+import { ClickCounter } from './click-counter';
 
 
 const images = {
@@ -66,7 +67,8 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
           <Slide transition={ ['slide'] }
-                 id="what-is-react">
+                 id="what-is-react"
+                 notes="React is a library, it is not a framework">
             <Heading size={ 2 }
                      caps
                      textColor="secondary"
@@ -80,7 +82,7 @@ export default class Presentation extends React.Component {
               Components take props in input and render "something" in output.
             </Text>
             <Text margin="30px auto">
-              Can be HTML, Android component, pretty much anything (or nothing).
+              Can be HTML, Android component, pretty much anything (or even nothing).
             </Text>
           </Slide>
           <Slide transition={ ['zoom', 'fade'] }
@@ -102,6 +104,60 @@ export default class Presentation extends React.Component {
                 <ContactForm />
               </Fill>
             </Layout>
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id="stateless-functions">
+            <Heading size={ 2 }
+                     fit
+                     caps
+                     textColor="secondary"
+                     textFont="primary">
+              Stateless functions
+            </Heading>
+            <Layout>
+              <Fill>
+                <CodePane lang="jsx"
+                          source={ require('!!raw!./click-counter') }
+                          margin="20px auto" />
+              </Fill>
+              <Fill>
+                <ClickCounter />
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide transition={ ['slide'] }
+                 id="component-lifecycle"
+                 notes="<a href='https://facebook.github.io/react/docs/component-specs.html' target='_blank'>https://facebook.github.io/react/docs/component-specs.html</a>">
+            <Heading size={ 2 }
+                     fit
+                     caps
+                     textColor="secondary"
+                     textFont="primary">
+              Component lifecycle
+            </Heading>
+            <List>
+              <ListItem>
+                componentWillMount()
+              </ListItem>
+              <ListItem>
+                componentDidMount()
+              </ListItem>
+              <ListItem>
+                componentWillReceiveProps(nextProps)
+              </ListItem>
+              <ListItem>
+                shouldComponentUpdate(nextProps, nextState)
+              </ListItem>
+              <ListItem>
+                componentWillUpdate(nextProps, nextState)
+              </ListItem>
+              <ListItem>
+                componentDidUpdate(prevProps, prevState)
+              </ListItem>
+              <ListItem>
+                componentWillUnmount()
+              </ListItem>
+            </List>
           </Slide>
         </Deck>
       </Spectacle>
