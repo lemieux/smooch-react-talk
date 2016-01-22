@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import styles from './styles';
 
 function SaveButton(props) {
   return (
     <div className="button-wrapper">
-      <button onClick={ props.onClick }>
+      <button style={styles.button} onClick={ props.onClick }>
         { props.label }
       </button>
     </div>
