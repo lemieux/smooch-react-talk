@@ -72,6 +72,10 @@ export default class Presentation extends React.Component {
             <slides.FragmentSlide />
           </Slide>
           <Slide transition={ ['zoom', 'fade'] }
+                 id="props-validation">
+            <slides.PropsValidationSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
                  id='redux'>
             <slides.ReduxSlide />
           </Slide>
@@ -86,6 +90,19 @@ export default class Presentation extends React.Component {
           <Slide transition={ ['zoom', 'fade'] }
                  id='action-creators'>
             <slides.ActionCreatorsSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='reducers'
+                 notes="You always return a new state, never modify the one that's there. Also, you don't change the payload from the action, format it in the action creator instead.">
+            <slides.ReducersSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='store'>
+            <slides.StoreSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='reducer-composition'>
+            <slides.ReducerCompositionSlide />
           </Slide>
         </Deck>
       </Spectacle>

@@ -246,6 +246,22 @@ export function FragmentSlide(props) {
     )
 }
 
+
+export function PropsValidationSlide(props) {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               textFont="primary">
+        Props validation
+      </Heading>
+      <Text textColor='secondary'>
+        TODO
+      </Text>
+    </div>
+    )
+}
+
 export function ReactSlide() {
   return (
     <div>
@@ -291,9 +307,9 @@ export function ReduxIntroSlide() {
           Only source of truth
         </Heading>
         <Text>
-          The state of your whole application is stored in an object tree within a single
+          <span>The state of your whole application is stored in an object tree within a single</span>
           <S type="underline">
-    store
+            store
     </S>.
         </Text>
         <Heading size={ 5 }
@@ -302,9 +318,9 @@ export function ReduxIntroSlide() {
           State is read-only
         </Heading>
         <Text>
-          The only way to mutate the state is to emit an
+          <span>The only way to mutate the state is to emit an</span>
           <S type="underline">
-    action
+            action
     </S>, an object describing what happened.
         </Text>
         <Heading size={ 5 }
@@ -313,9 +329,9 @@ export function ReduxIntroSlide() {
           Changes are made with pure functions
         </Heading>
         <Text>
-          To specify how the state tree is transformed by actions, you write pure
+          <span>To specify how the state tree is transformed by actions, you write pure</span>
           <S type="underline">
-    reducers
+            reducers
     </S>.
         </Text>
       </div>
@@ -327,13 +343,15 @@ export function ActionsSlide() {
   return (
     <div>
       <Heading size={ 1 }
-        caps
-        textFont='primary'>
+               caps
+               textFont='primary'>
         Actions
       </Heading>
       <Text>
         <span>Actions are payloads of information that send data from your application to your store. They are the only source of information for the store. You send them to the store using</span>
-        <Code>store.dispatch()</Code>
+        <Code>
+        store.dispatch()
+    </Code>
         <span>.</span>
       </Text>
       <CodePane lang="js"
@@ -366,6 +384,72 @@ export function ActionCreatorsSlide() {
       <CodePane lang="js"
                 source={ require('!!raw!./examples/action-creators/usage') }
                 margin="20px auto" />
+    </div>
+    );
+}
+
+export function ReducersSlide() {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               textFont='primary'>
+        Reducers
+      </Heading>
+      <Text>
+        Actions describe the fact that something happened, but don’t specify how the application’s state changes in response.
+      </Text>
+      <Text>
+        This is the job of a reducer.
+      </Text>
+      <CodePane lang="js"
+                source={ require('!!raw!./examples/reducers/definition') }
+                margin="20px auto" />
+    </div>
+    );
+}
+
+export function StoreSlide() {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               textFont='primary'>
+        Store
+      </Heading>
+      <Text>
+        The store is where all the data logic lives. Reducers define how the data will be structured in the store.
+      </Text>
+      <CodePane lang="js"
+                source={ require('!!raw!./examples/store/simple') }
+                margin="20px auto" />
+      <Text>
+        You could have only one reducer and have a big ass switch statement to handle your actions... or you could use reducer composition.
+      </Text>
+    </div>
+    );
+}
+
+
+
+export function ReducerCompositionSlide() {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               fit
+               textFont='primary'>
+        Reducer composition
+      </Heading>
+      <Text>
+        This helps you keep your reducers small and understandable.
+      </Text>
+      <CodePane lang="js"
+                source={ require('!!raw!./examples/store/composed') }
+                margin="20px auto" />
+      <Text>
+        Each reducer will nest its state under a given key.
+      </Text>
     </div>
     );
 }
