@@ -35,6 +35,10 @@ export default class Presentation extends React.Component {
             <slides.ReactSlide />
           </Slide>
           <Slide transition={ ['zoom', 'fade'] }
+                 id="props-vs-state">
+            <slides.PropsVsStateSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
                  id="stateful-components"
                  notes="You should not try to access elements inside your children components. Let them decide when you bubble that data up to you.">
             <slides.StatefulComponentsSlide />
@@ -109,3 +113,7 @@ export default class Presentation extends React.Component {
       );
   }
 }
+
+// TODO :
+// - replace lifecycle stuff by graphics
+// - change store state explanation per andrew suggestion

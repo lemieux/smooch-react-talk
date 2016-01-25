@@ -247,6 +247,21 @@ export function FragmentSlide(props) {
 }
 
 
+export function PropsVsStateSlide(props) {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               textFont="primary">
+        Props vs state
+      </Heading>
+      <Text textColor='secondary'>
+        TODO
+      </Text>
+    </div>
+    )
+}
+
 export function PropsValidationSlide(props) {
   return (
     <div>
@@ -307,9 +322,9 @@ export function ReduxIntroSlide() {
           Only source of truth
         </Heading>
         <Text>
-          <span>The state of your whole application is stored in an object tree within a single</span>
+          <span>The state of your whole application is stored in an object tree within a single&nbsp;</span>
           <S type="underline">
-            store
+                store
     </S>.
         </Text>
         <Heading size={ 5 }
@@ -318,9 +333,9 @@ export function ReduxIntroSlide() {
           State is read-only
         </Heading>
         <Text>
-          <span>The only way to mutate the state is to emit an</span>
+          <span>The only way to mutate the state is to emit an&nbsp;</span>
           <S type="underline">
-            action
+                action
     </S>, an object describing what happened.
         </Text>
         <Heading size={ 5 }
@@ -329,9 +344,9 @@ export function ReduxIntroSlide() {
           Changes are made with pure functions
         </Heading>
         <Text>
-          <span>To specify how the state tree is transformed by actions, you write pure</span>
+          <span>To specify how the state tree is transformed by actions, you write pure&nbsp;</span>
           <S type="underline">
-            reducers
+                reducers
     </S>.
         </Text>
       </div>
@@ -350,7 +365,7 @@ export function ActionsSlide() {
       <Text>
         <span>Actions are payloads of information that send data from your application to your store. They are the only source of information for the store. You send them to the store using</span>
         <Code>
-        store.dispatch()
+            store.dispatch()
     </Code>
         <span>.</span>
       </Text>

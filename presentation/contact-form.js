@@ -20,10 +20,12 @@ export class ContactForm extends Component {
             Name
           </label>
           <input ref="firstName"
+                 style={ styles.input }
                  defaultValue={ this.state.firstName }
                  onChange={ this.onChange } />
           <p>
-            Your name is { this.state.firstName }
+            Your name is
+            { this.state.firstName }
           </p>
         </div>
       </form>
