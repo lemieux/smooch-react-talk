@@ -1,28 +1,19 @@
 import React, { Component } from 'react';
-import styles from '../../styles';
 
-export class Parent extends Component {
+export class FragmentsExample extends Component {
   render() {
-    return (
-      <div className='parent-class'
-           style={ {  marginTop: 200, border: '1px red solid'} }>
-        <p>
-          I'm the parent wrapper!
-        </p>
-        { this.props.children }
-      </div>
-      );
-  }
-}
+    const items = ['item 1', 'item 2', 'item 3'];
 
-export class ChildrenExample extends Component {
-  render() {
+    const fragment = items.map((item, index) => {
+      return <li key={ index }>
+               { item }
+             </li>;
+    });
+
     return (
-      <Parent>
-        <p style={ {  border: '1px white solid'} }>
-          I'm a child
-        </p>
-      </Parent>
+      <ul style={ {  textAlign: 'left'} }>
+        { fragment }
+      </ul>
       );
   }
 }

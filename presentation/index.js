@@ -19,6 +19,8 @@ const theme = createTheme({
   secondary: 'white'
 });
 
+theme.screen.components.text.color = 'white';
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -27,6 +29,10 @@ export default class Presentation extends React.Component {
               transitionDuration={ 500 }>
           <Slide transition={ ['zoom'] }>
             <slides.FrontSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='react'>
+            <slides.ReactSlide />
           </Slide>
           <Slide transition={ ['zoom', 'fade'] }
                  id="stateful-components"
@@ -61,8 +67,25 @@ export default class Presentation extends React.Component {
             <slides.ChildrenSlide />
           </Slide>
           <Slide transition={ ['zoom', 'fade'] }
-                 id="fragments">
+                 id="fragments"
+                 notes="List items need a <code>key</code> prop to be able to match them afterwards.">
             <slides.FragmentSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='redux'>
+            <slides.ReduxSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='redux-intro'>
+            <slides.ReduxIntroSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='actions'>
+            <slides.ActionsSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='action-creators'>
+            <slides.ActionCreatorsSlide />
           </Slide>
         </Deck>
       </Spectacle>
