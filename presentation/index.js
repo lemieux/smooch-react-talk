@@ -53,6 +53,23 @@ export default class Presentation extends React.Component {
             <slides.ComponentLifecycleSlide />
           </Slide>
           <Slide transition={ ['zoom', 'fade'] }
+                 id="component-lifecycle-initial-render"
+                 notes="getDefaultProps and getInitialState are not used with ES6 classes... use class properties instead.">
+            <slides.ComponentLifecycleInitialRenderSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id="component-lifecycle-props-change">
+            <slides.ComponentLifecyclePropsChangeSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id="component-lifecycle-state-change">
+            <slides.ComponentLifecycleStateChangeSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id="component-lifecycle-unmount">
+            <slides.ComponentLifecycleUnmountSlide />
+          </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
                  id="pass-data">
             <slides.PassDataSlide />
           </Slide>

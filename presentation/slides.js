@@ -98,29 +98,76 @@ export function ComponentLifecycleSlide(props) {
                textFont="primary">
         Component lifecycle
       </Heading>
+      <Heading size={5}
+      textColor="tertiary">
+      Sce­nar­ios
+      </Heading>
+      <Text>
+        There are just a few sce­nar­ios that require you to be aware of the life­cy­cle meth­ods
+      </Text>
       <List>
-        <ListItem>
-          componentWillMount()
-        </ListItem>
-        <ListItem>
-          componentDidMount()
-        </ListItem>
-        <ListItem>
-          componentWillReceiveProps(nextProps)
-        </ListItem>
-        <ListItem>
-          shouldComponentUpdate(nextProps, nextState)
-        </ListItem>
-        <ListItem>
-          componentWillUpdate(nextProps, nextState)
-        </ListItem>
-        <ListItem>
-          componentDidUpdate(prevProps, prevState)
-        </ListItem>
-        <ListItem>
-          componentWillUnmount()
-        </ListItem>
+        <ListItem>Ini­tial Ren­der</ListItem>
+        <ListItem>Props Change</ListItem>
+        <ListItem>State Change</ListItem>
+        <ListItem>Com­po­nent Unmount</ListItem>
       </List>
+    </div>
+    );
+}
+
+
+export function ComponentLifecycleInitialRenderSlide(props) {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               fit
+               textFont="primary">
+        Component lifecycle - Initial Render
+      </Heading>
+      <Image src={require('../assets/initial-render.png')} />
+    </div>
+    );
+}
+
+export function ComponentLifecyclePropsChangeSlide(props) {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               fit
+               textFont="primary">
+        Component lifecycle - Props change
+      </Heading>
+      <Image src={require('../assets/props-change.png')} />
+    </div>
+    );
+}
+
+export function ComponentLifecycleStateChangeSlide(props) {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               fit
+               textFont="primary">
+        Component lifecycle - State change
+      </Heading>
+      <Image src={require('../assets/state-change.png')} />
+    </div>
+    );
+}
+
+export function ComponentLifecycleUnmountSlide(props) {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               fit
+               textFont="primary">
+        Component lifecycle - Unmount
+      </Heading>
+      <Image src={require('../assets/unmount.png')} />
     </div>
     );
 }
@@ -256,7 +303,16 @@ export function PropsVsStateSlide(props) {
         Props vs state
       </Heading>
       <Text textColor='secondary'>
-        TODO
+        A component can get data from two places : props and state.
+      </Text>
+      <Text textColor='secondary' margin={20}>
+        <S type="bold">Props</S> are provided by the parent (or by default props) and should <S type="underline">not</S> be mutated.
+      </Text>
+      <Text textColor='secondary' margin={20}>
+        <S type="bold">State</S> is an internal data store used to keep the component state (<S type="italic">isOpened </S> for a toggle, <S type="italic">text </S> for the current value of an input, etc.).
+      </Text>
+      <Text textColor='secondary'>
+        It can be initialized with props, and can be mutated (using <S type="italic">this.setState</S>).
       </Text>
     </div>
     )
@@ -330,7 +386,7 @@ export function ReduxIntroSlide() {
         <Heading size={ 5 }
                  textColor='secondary'
                  textFont="primary">
-          State is read-only
+          State objects are immutable
         </Heading>
         <Text>
           <span>The only way to mutate the state is to emit an&nbsp;</span>
