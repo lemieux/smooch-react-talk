@@ -125,6 +125,10 @@ export default class Presentation extends React.Component {
                  id='reducer-composition'>
             <slides.ReducerCompositionSlide />
           </Slide>
+          <Slide transition={ ['zoom', 'fade'] }
+                 id='fin'>
+            <slides.FinSlide />
+          </Slide>
         </Deck>
       </Spectacle>
       );

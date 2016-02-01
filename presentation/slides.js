@@ -98,18 +98,26 @@ export function ComponentLifecycleSlide(props) {
                textFont="primary">
         Component lifecycle
       </Heading>
-      <Heading size={5}
-      textColor="tertiary">
-      Sce­nar­ios
+      <Heading size={ 5 }
+               textColor="tertiary">
+        Sce­nar­ios
       </Heading>
       <Text>
         There are just a few sce­nar­ios that require you to be aware of the life­cy­cle meth­ods
       </Text>
       <List>
-        <ListItem>Ini­tial Ren­der</ListItem>
-        <ListItem>Props Change</ListItem>
-        <ListItem>State Change</ListItem>
-        <ListItem>Com­po­nent Unmount</ListItem>
+        <ListItem>
+          Ini­tial Ren­der
+        </ListItem>
+        <ListItem>
+          Props Change
+        </ListItem>
+        <ListItem>
+          State Change
+        </ListItem>
+        <ListItem>
+          Com­po­nent Unmount
+        </ListItem>
       </List>
     </div>
     );
@@ -125,7 +133,7 @@ export function ComponentLifecycleInitialRenderSlide(props) {
                textFont="primary">
         Component lifecycle - Initial Render
       </Heading>
-      <Image src={require('../assets/initial-render.png')} />
+      <Image src={ require('../assets/initial-render.png') } />
     </div>
     );
 }
@@ -139,7 +147,7 @@ export function ComponentLifecyclePropsChangeSlide(props) {
                textFont="primary">
         Component lifecycle - Props change
       </Heading>
-      <Image src={require('../assets/props-change.png')} />
+      <Image src={ require('../assets/props-change.png') } />
     </div>
     );
 }
@@ -153,7 +161,7 @@ export function ComponentLifecycleStateChangeSlide(props) {
                textFont="primary">
         Component lifecycle - State change
       </Heading>
-      <Image src={require('../assets/state-change.png')} />
+      <Image src={ require('../assets/state-change.png') } />
     </div>
     );
 }
@@ -167,7 +175,7 @@ export function ComponentLifecycleUnmountSlide(props) {
                textFont="primary">
         Component lifecycle - Unmount
       </Heading>
-      <Image src={require('../assets/unmount.png')} />
+      <Image src={ require('../assets/unmount.png') } />
     </div>
     );
 }
@@ -305,14 +313,32 @@ export function PropsVsStateSlide(props) {
       <Text textColor='secondary'>
         A component can get data from two places : props and state.
       </Text>
-      <Text textColor='secondary' margin={20}>
-        <S type="bold">Props</S> are provided by the parent (or by default props) and should <S type="underline">not</S> be mutated.
+      <Text textColor='secondary'
+            margin={ 20 }>
+        <S type="bold">
+    Props
+    </S> are provided by the parent (or by default props) and should
+        <S type="underline">
+    not
+    </S> be mutated.
       </Text>
-      <Text textColor='secondary' margin={20}>
-        <S type="bold">State</S> is an internal data store used to keep the component state (<S type="italic">isOpened </S> for a toggle, <S type="italic">text </S> for the current value of an input, etc.).
+      <Text textColor='secondary'
+            margin={ 20 }>
+        <S type="bold">
+    State
+    </S> is an internal data store used to keep the component state (
+        <S type="italic">
+    isOpened
+    </S> for a toggle,
+        <S type="italic">
+    text
+    </S> for the current value of an input, etc.).
       </Text>
       <Text textColor='secondary'>
-        It can be initialized with props, and can be mutated (using <S type="italic">this.setState</S>).
+        It can be initialized with props, and can be mutated (using
+        <S type="italic">
+    this.setState
+    </S>).
       </Text>
     </div>
     )
@@ -326,9 +352,9 @@ export function PropsValidationSlide(props) {
                textFont="primary">
         Props validation
       </Heading>
-      <Text textColor='secondary'>
-        TODO
-      </Text>
+      <CodePane lang="js"
+                source={ require('!!raw!./examples/props-validation/example') }
+                margin="20px auto" />
     </div>
     )
 }
@@ -380,7 +406,7 @@ export function ReduxIntroSlide() {
         <Text>
           <span>The state of your whole application is stored in an object tree within a single&nbsp;</span>
           <S type="underline">
-                store
+                    store
     </S>.
         </Text>
         <Heading size={ 5 }
@@ -391,7 +417,7 @@ export function ReduxIntroSlide() {
         <Text>
           <span>The only way to mutate the state is to emit an&nbsp;</span>
           <S type="underline">
-                action
+                    action
     </S>, an object describing what happened.
         </Text>
         <Heading size={ 5 }
@@ -402,7 +428,7 @@ export function ReduxIntroSlide() {
         <Text>
           <span>To specify how the state tree is transformed by actions, you write pure&nbsp;</span>
           <S type="underline">
-                reducers
+                    reducers
     </S>.
         </Text>
       </div>
@@ -421,7 +447,7 @@ export function ActionsSlide() {
       <Text>
         <span>Actions are payloads of information that send data from your application to your store. They are the only source of information for the store. You send them to the store using</span>
         <Code>
-            store.dispatch()
+                store.dispatch()
     </Code>
         <span>.</span>
       </Text>
@@ -523,4 +549,23 @@ export function ReducerCompositionSlide() {
       </Text>
     </div>
     );
+}
+
+export function FinSlide() {
+  return (
+    <div>
+      <Heading size={ 1 }
+               caps
+               textFont='primary'>
+        Fin.
+      </Heading>
+      <Text>
+        Questions? Songs? Insults?
+      </Text>
+      <Text margin={20} textSize={20}>
+        Pretty sure I didn't cover all the stuff you need. A quick read of the React documentation (it's not that big) helps a lot and quick read of the Redux documentation (a bit bigger, but well structured) would help too.
+      </Text>
+    </div>
+
+    )
 }
